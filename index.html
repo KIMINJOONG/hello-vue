@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <!-- Vue 기초문법1 - 선언적 렌더링 -->
+    <div id="app">
+      {{ message }}
+    </div>
+
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          message: "안녕하세요 Vue!"
+        }
+      });
+    </script>
+
+    <!-- Vue 기초문법2 선언적 렌더링2-->
+    <div id="app-2">
+      <span v-bind:title="message">
+        마우스를 올리면 타이틀 메시지를 볼 수 있어요!
+      </span>
+    </div>
+
+    <script>
+      var app = new Vue({
+        el: "#app-2",
+        data: {
+          message: `이 페이지는 ${new Date()}에 로드 되있습니다.`
+        }
+      });
+    </script>
+
+    <!-- Vue 기초문법3 - 조건문 -->
+    <div id="app-3">
+      <p v-if="seen">조건문 테스트 메세지</p>
+    </div>
+
+    <script>
+      var app = new Vue({
+        el: "#app-3",
+        data: {
+          seen: true
+        }
+      });
+    </script>
+  </body>
+</html>
